@@ -2,17 +2,12 @@ package com.guidebook.myapplication;
 
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -26,7 +21,7 @@ public class MainActivity extends ListActivity {
     private ProgressDialog pDialog;
 
     // URL to get contacts JSON
-    private static String url = "http://www.guidebook.com/service/v2/upcomingGuides";
+    private static String url = "https://www.guidebook.com/service/v2/upcomingGuides";
 
     // JSON Node names
     private static final String DATA = "data";
@@ -56,30 +51,7 @@ public class MainActivity extends ListActivity {
 
         ListView lv = getListView();
 
-        // Listview on item click listener
-        lv.setOnItemClickListener(new OnItemClickListener() {
 
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view,
-                                    int position, long id) {
-                // getting values from selected ListItem
-                String name = ((TextView) view.findViewById(R.id.name))
-                        .getText().toString();
-                String cost = ((TextView) view.findViewById(R.id.email))
-                        .getText().toString();
-                String description = ((TextView) view.findViewById(R.id.mobile))
-                        .getText().toString();
-
-                // Starting single contact activity
-                Intent in = new Intent(getApplicationContext(),
-                        SingleContactActivity.class);
-                in.putExtra(TAG_NAME, name);
-                //in.putExtra(TAG_EMAIL, cost);
-                //in.putExtra(TAG_PHONE_MOBILE, description);
-                startActivity(in);
-
-            }
-        });
 
         // Calling async task to get json
         new GetContacts().execute();
@@ -151,10 +123,8 @@ public class MainActivity extends ListActivity {
                         contact.put(TAG_NAME, name);
                         contact.put(TAG_URL, "www.guidebook.com"+URL);
                         contact.put(TAG_CITY, city+","+state);
-                        contact.put(TAG_STATE, state);
-                        contact.put(TAG_OBJ_TYPE, objType);
                         contact.put(TAG_ICON, iconURL);
-
+                        Log.e("ICON URL:", iconURL);
 
 
                         // adding contact to contact list
@@ -180,10 +150,10 @@ public class MainActivity extends ListActivity {
              * */
             ListAdapter adapter = new SimpleAdapter(
                     MainActivity.this, contactList,
-                    R.layout.list_item, new String[] {TAG_START_DATE, TAG_END_DATE,TAG_URL, TAG_CITY,TAG_ICON
+                    R.layout.list_item, new String[] {TAG_START_DATE, TAG_END_DATE,TAG_NAME,TAG_URL, TAG_CITY ,TAG_ICON
 
             }, new int[] { R.id.name,
-                    R.id.email, R.id.mobile, R.id.city_state, R.id.icon });
+                    R.id.email, R.id.mobile, R.id.eventName, R.id.city_state, R.id.icon });
 
             setListAdapter(adapter);
         }

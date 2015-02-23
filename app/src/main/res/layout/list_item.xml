@@ -10,6 +10,17 @@
     <!-- Name Label -->
 
     <TextView
+        android:id="@+id/mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:text="Mobile: "
+        android:textColor="#5d5d5d"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:textSize="20dp" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/city_state"
@@ -28,8 +39,8 @@
 
     <!-- Email label -->
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:id="@+id/icon" />
 
     <TextView
@@ -40,15 +51,13 @@
         android:textColor="#acacac"
         android:layout_gravity="right" />
 
-    <!-- Mobile number label -->
     <TextView
-        android:id="@+id/mobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="left"
-        android:text="Mobile: "
-        android:textColor="#5d5d5d"
-        android:textStyle="bold"
+        android:text="New Text"
+        android:id="@+id/eventName"
         android:layout_gravity="right" />
+
+    <!-- Mobile number label -->
 
 </LinearLayout>

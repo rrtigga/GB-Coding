@@ -4,20 +4,9 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp">
+    android:padding="10dp"
+    android:weightSum="1">
     <!-- Name Label -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="New Text"
-        android:id="@+id/city_state_label"
-        android:layout_gravity="center_horizontal" />
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView" />
-
     <TextView android:id="@+id/name_label"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -26,6 +15,27 @@
         android:paddingTop="10dip"
         android:paddingBottom="10dip"
         android:textColor="#43bd00"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/city_state_label"
+        android:layout_gravity="center_horizontal" />
+
+    <ImageButton
+        android:layout_width="90dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_weight="0.20" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/eventName_label"
+        android:layout_gravity="center_horizontal" />
+
     <!-- Email Label -->
     <TextView android:id="@+id/email_label"
         android:layout_width="fill_parent"

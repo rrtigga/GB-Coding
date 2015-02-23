@@ -3,8 +3,8 @@ package com.guidebook.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +18,7 @@ public class SingleContactActivity  extends Activity {
     private static final String TAG_PHONE_MOBILE = "mobile";
     private static final String TAG_CITY = "city";
     private static final String TAG_ICON = "icon";
+    private static final String TAG_EVENT_NAME = "event_name";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,13 @@ public class SingleContactActivity  extends Activity {
         String mobile = in.getStringExtra(TAG_PHONE_MOBILE);
         String City = in.getStringExtra(TAG_CITY);
         String Icon = in.getStringExtra(TAG_ICON);
-        Uri myUri = Uri.parse(Icon);
+        Log.e("ISH: ", Icon);
+        String EventName = in.getStringExtra(TAG_EVENT_NAME);
+
+
+
+
+
 
 
         // Displaying all values on the screen
@@ -41,12 +48,22 @@ public class SingleContactActivity  extends Activity {
         TextView lblMobile = (TextView) findViewById(R.id.mobile_label);
         TextView lblCity = (TextView) findViewById(R.id.city_state_label);
         ImageView lblIcon = (ImageView) findViewById(R.id.icon);
+        TextView lblEventName = (TextView)findViewById(R.id.eventName_label);
 
         lblName.setText(name);
         lblEmail.setText(email);
         lblMobile.setText(mobile);
         lblCity.setText(City);
-        Picasso.with(getApplicationContext()).load(myUri).into(lblIcon);
+        lblEventName.setText(EventName);
+        //lblIcon.(Icon);
+
+
+
+
+        Picasso.with(getApplicationContext()).load(Icon).into(lblIcon);
 
     }
+
+
+
 }
