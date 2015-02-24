@@ -39,7 +39,7 @@ public class SingleContactActivity  extends Activity {
 
 
 
-
+//
 
 
         // Displaying all values on the screen
@@ -61,6 +61,10 @@ public class SingleContactActivity  extends Activity {
 
 
         Picasso.with(getApplicationContext()).load(Icon).into(lblIcon);
+
+
+
+
 
     }
 

@@ -16,6 +16,7 @@
         android:gravity="left"
         android:text="Mobile: "
         android:textColor="#5d5d5d"
+        android:fontFamily="sans-serif-light"
         android:textStyle="bold"
         android:layout_gravity="center_horizontal"
         android:textSize="20dp" />
@@ -24,12 +25,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/city_state"
+        android:fontFamily="sans-serif-light"
         android:layout_gravity="right" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="180dp"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
         android:paddingBottom="2dip"
         android:paddingTop="6dip"
         android:textColor="#43bd00"
@@ -41,6 +44,7 @@
     <ImageView
         android:layout_width="35dp"
         android:layout_height="35dp"
+        android:visibility="gone"
         android:id="@+id/icon" />
 
     <TextView
@@ -48,6 +52,7 @@
         android:layout_width="180dp"
         android:layout_height="wrap_content"
         android:paddingBottom="2dip"
+        android:fontFamily="sans-serif-light"
         android:textColor="#acacac"
         android:layout_gravity="right" />
 
@@ -55,6 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
+        android:fontFamily="sans-serif-light"
         android:id="@+id/eventName"
         android:layout_gravity="right" />
 

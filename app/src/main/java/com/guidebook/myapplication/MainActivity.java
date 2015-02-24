@@ -55,6 +55,10 @@ public class MainActivity extends ListActivity {
 
         // Calling async task to get json
         new GetContacts().execute();
+
+
+
+
     }
 
     /**
